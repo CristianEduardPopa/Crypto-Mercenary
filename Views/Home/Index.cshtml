@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    //@using ()
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+            <th>Coin</th>
+            <th>Price</th>
+            <th>Hyperlink</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+        <tr>
+            <td colspan="@ViewBag.NbColumns">Name</td>
+        </tr>
+        <tr>
+            
+            <td class="someCssStyle">Name</td>
+            
+        </tr>    
+        </tbody>
+    </table>
+</div>
