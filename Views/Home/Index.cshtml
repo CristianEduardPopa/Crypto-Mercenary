@@ -1,13 +1,22 @@
-﻿@{
+@{
     ViewData["Title"] = "Home Page";
-    //@using ()
+    @using System.Diagnostics;
+    @using Microsoft.AspNetCore.Mvc;
+    @using OpenQA.Selenium.Chrome;
+    @using OpenQA.Selenium;
+    @using System.Net;
+    @using System.Text;
+    @using CEL_MAI_SITE.Models;
+    @using CEL_MAI_SITE.Controllers;
+    @using CsvHelper;
+    @model List<Coin>
 }
 
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-
+    
     <table class="table table-hover">
         <thead>
             <tr>
@@ -19,8 +28,25 @@
         
         <tbody>
         <tr>
-            <td colspan="@ViewBag.NbColumns">Name</td>
-        </tr>
+            <td colspan="@ViewBag.NbColumns">
+                     <tr>
+                        <td>@{
+                                using (var path = new StreamReader("D:\\#####C#\\CEL_MAI_SITE\\links.csv"))
+                                using (var csv = new CsvReader(path, System.Globalization.CultureInfo.InvariantCulture))
+                                {
+                                    var records = csv.GetRecords<Coin>();
+                                }
+                            }</td>
+                         <td>
+                            @{
+                                foreach(var coin in Model)
+                                {
+                                    @coin.names
+                                }
+                            }
+                         </td>
+                         <td></td>
+                     </tr>   
         <tr>
             
             <td class="someCssStyle">Name</td>
