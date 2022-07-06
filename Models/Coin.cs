@@ -1,9 +1,12 @@
-﻿namespace CEL_MAI_SITE.Models
+using OpenQA.Selenium;
+
+namespace CEL_MAI_SITE.Models
 {
     public class Coin
     {
-        public dynamic names { get; set; }
-        public dynamic prices { get; set; }
+        public IWebElement? names { get; set; }
+        public IWebElement? prices { get; set; }
+        public IWebElement? tags { get; set; }
 
     }
 }
